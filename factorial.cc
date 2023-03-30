@@ -2,9 +2,16 @@
 
 using namespace std;
 
-/*
-  Your code here
- */
+template <unsigned long long N>
+unsigned long long factorial()
+{
+    return N * factorial<N-1>();
+}
+
+template <>
+unsigned long long factorial<0>() {
+  return 1;
+}
 
 int main()
 {

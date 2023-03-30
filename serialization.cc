@@ -12,6 +12,7 @@ struct Product
     int inventory;
 };
 
+// return ostream object
 ostream& operator<<(ostream& os, Product const& product)
 {
     return os << product.name << ": "

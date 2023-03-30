@@ -2,12 +2,13 @@
 
 using namespace std;
 
-template <unsigned long long N>
+template <int N>
 unsigned long long factorial()
 {
     return N * factorial<N-1>();
 }
 
+// specialization
 template <>
 unsigned long long factorial<0>() {
   return 1;

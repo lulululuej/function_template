@@ -32,5 +32,6 @@ int main()
     cout << reduce({1,2,3,4,5}) << endl;
     cout << reduce(pi, 3.0) << endl;
     cout << reduce(factorial, 1.0, multiply) << endl;
-    //cout << reduce(concat, "hello"s) << endl;
+    // need c++ 14
+    cout << reduce(concat, "hello"s) << endl;
 }

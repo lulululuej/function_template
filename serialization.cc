@@ -12,7 +12,7 @@ struct Product
     int inventory;
 };
 
-// return ostream object
+// overload << operator object
 ostream& operator<<(ostream& os, Product const& product)
 {
     return os << product.name << ": "
@@ -33,8 +33,9 @@ T read(istream& is)
 template<>
 string read<string>(istream& is) {
     string str;
-    // sets the maximum number of characters to ignore
+    // ignore until length max or ig there is a delim '#'
     is.ignore(numeric_limits<streamsize>::max(), '#');
+    // extract is to str till there is a delim '#'
     getline(is, str, '#');
     return str;
 }
@@ -94,7 +95,7 @@ int main()
     { // recieve data from ss
 
         /*
-            1. first call void Product read<Product>(istream& is)
+            1. first call Product read<Product>(istream& is)
             2. the firstline is string : name
             3. second and third line are double and int
         */
